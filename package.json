@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "watch-css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+        "watch-ts": "npx tsc --watch"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.2.7",
+        "typescript": "^4.9.5"
+    }
+}
