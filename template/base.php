@@ -9,7 +9,9 @@
 </head>
 <body class="container mx-auto">
     <h1 class="text-center text-3xl py-6">Liste de naissance</h1>
-    <div id="app"></div>
+    <div class="flex flex-wrap">
+        <?= $cards ?>
+    </div>
     <script src="dist/main.js"></script>
 </body>
 </html>

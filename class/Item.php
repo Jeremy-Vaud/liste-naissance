@@ -9,6 +9,7 @@ class Item {
     protected float $price;
     protected bool $bought;
     protected string $buyer;
+    protected string $link;
     
     /**
      * __construct
@@ -85,8 +86,8 @@ class Item {
         $result = [];
         foreach ($array as $line) {
             $item = new Item();
-            foreach($item as $field => $val) {
-                $this->set($field, $val);
+            foreach($line as $field => $val) {
+                $item->set($field, $val);
             }
             $result[] = $item;
         }
