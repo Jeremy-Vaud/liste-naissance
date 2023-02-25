@@ -6,6 +6,6 @@
     <?php if ($elt->get("bought")) { ?>
         <p class="text-gray-500 py-1">déjà réservé</p>
     <?php } else { ?>
-        <button id="<?= $elt->get("id") ?>" class="py-1 px-6 bg-orange-700 hover:bg-orange-500 text-white">j'offre ce cadeau</button>
+        <button id="<?= $elt->get("id") ?>" class="py-1 px-6 bg-orange-700 hover:bg-orange-500 text-white btn">j'offre ce cadeau</button>
     <?php } ?>
 </div>
