@@ -3,9 +3,13 @@
     <img src="<?= htmlentities($elt->get("img")) ?>" class="w-[200px] h-[200px] object-cover mx-auto mb-3">
     <a href="<?= htmlentities($elt->get("link")) ?>" target="_blank" class="text-orange-700 hover:text-orange-500">Lien vers boutique</a>
     <p class="text-lg my-3"><?= htmlentities($elt->get("price")) ?> €</p>
-    <?php if ($elt->get("bought")) { ?>
-        <p class="text-gray-500 py-1">déjà réservé</p>
-    <?php } else { ?>
-        <button id="<?= $elt->get("id") ?>" class="py-1 px-6 bg-orange-700 hover:bg-orange-500 text-white btn">j'offre ce cadeau</button>
-    <?php } ?>
+    <div>
+        <?php if ($elt->get("bought")) { ?>
+            <p class="text-gray-500 py-1 alreadyBought">déjà réservé</p>
+            <button id="<?= $elt->get("id") ?>" class="py-1 px-6 bg-orange-700 hover:bg-orange-500 text-white btn hidden">j'offre ce cadeau</button>
+        <?php } else { ?>
+            <p class="text-gray-500 py-1 hidden alreadyBought">déjà réservé</p>
+            <button id="<?= $elt->get("id") ?>" class="py-1 px-6 bg-orange-700 hover:bg-orange-500 text-white btn">j'offre ce cadeau</button>
+        <?php } ?>
+    </div>
 </div>

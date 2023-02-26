@@ -103,7 +103,7 @@ class Item {
     public function buy(string $name) {
         $sql = "UPDATE `item` SET `buyer` = :buyer, `bought` = :bought WHERE `id` = :id";
         $param = [":buyer" => $name, ":id" => $this->id, ":bought" => true];
-        if (!BDD::Execute($sql)) {
+        if (!BDD::Execute($sql, $param)) {
             return false;
         }
         return true;
