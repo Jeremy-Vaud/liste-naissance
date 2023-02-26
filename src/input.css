@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+
+    html {
+        font-family: 'Heebo', sans-serif;
+        @apply text-gray-800;
+    }
+
+    input {
+        @apply border;
+        @apply border-gray-800;
+    }
+
+}
+
+@layer components {
+
+    .input-error {
+        @apply border-red-700;
+        @apply text-red-700;
+    }
+
+    .btn-primary {
+        @apply bg-blue-800;
+        @apply hover:bg-blue-600;
+        @apply text-white;
+        @apply py-1;
+        @apply px-6;
+        @apply transition-colors;
+    }
+
+    .link-primary {
+        @apply text-blue-800;
+        @apply hover:text-blue-600;
+        @apply cursor-pointer;
+        @apply transition-colors;
+    }
+
+}

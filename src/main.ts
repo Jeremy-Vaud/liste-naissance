@@ -19,33 +19,47 @@ listBtn.forEach(btn => {
 bgModal.addEventListener("click", closeModal)
 closeBtn.addEventListener("click", closeModal)
 
+inputName.addEventListener("change", checkName)
+
 form.addEventListener("submit", (e) => {
     e.preventDefault()
-    const formData = new FormData(form)
-    fetch("buy.php", {
-        method: "POST",
-        body: formData
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response.json()
+    if (checkName()) {
+        const formData = new FormData(form)
+        fetch("buy.php", {
+            method: "POST",
+            body: formData
         })
-        .then((data) => {
-            if(data.Error) {
-                throw Error(data.Error) 
-            }
-            if(!data.Success) {
-                throw Error("Not Success") 
-            }
-            showSuccess()
-        })
-        .catch((error) => {
-            console.error("Error:", error)
-            showError()
-        });
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json()
+            })
+            .then((data) => {
+                if (data.Error) {
+                    throw Error(data.Error)
+                }
+                if (!data.Success) {
+                    throw Error("Not Success")
+                }
+                showSuccess()
+            })
+            .catch((error) => {
+                console.error("Error:", error)
+                showError()
+            });
+    }
 })
+
+function checkName(): boolean {
+    if (inputName.value.length > 2) {
+        inputName.classList.remove("input-error")
+        return true
+    } else {
+        inputName.classList.add("input-error")
+        return false
+    }
+}
 
 function showSuccess(): void {
     const btn = document.getElementById(inputId.value)
@@ -58,7 +72,7 @@ function showSuccess(): void {
 
 function showError(): void {
     form.classList.add("hidden")
-    errorMsg.classList.remove("hidden")  
+    errorMsg.classList.remove("hidden")
 }
 
 function closeModal(): void {
@@ -66,7 +80,8 @@ function closeModal(): void {
     bgModal.classList.add("hidden")
     form.classList.remove("hidden")
     successMsg.classList.add("hidden")
-    errorMsg.classList.add("hidden") 
+    errorMsg.classList.add("hidden")
     inputId.value = ""
     inputName.value = ""
+    inputName.classList.remove("input-error")
 }

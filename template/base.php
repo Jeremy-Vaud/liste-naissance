@@ -19,8 +19,8 @@
         <form id="modal-form">
             <input type="hidden" id="item-id" name="id">
             <label for="name">Votre nom:</label>
-            <input type="text" id="name" name="name" class="w-full border-black border py-1 px-3 mb-6">
-            <button type="submit" class="py-1 px-6 bg-orange-700 hover:bg-orange-500 text-white">j'offre ce cadeau</button>
+            <input type="text" id="name" name="name" class="w-full py-1 px-3 mb-6">
+            <button type="submit" class="btn-primary">j'offre ce cadeau</button>
         </form>
         <div id="modal-success" class="hidden mb-6">
             <p class="text-2xl">Merci!</p>
@@ -28,7 +28,7 @@
         <div id="modal-error" class="hidden mb-6">
             <p>Une erreur est survenue!</p>
         </div>
-        <button id="modal-close" class="text-gray-500 cursor-pointer">Fermer</button>
+        <button id="modal-close" class="text-gray-500 cursor-pointer my-2">Fermer</button>
     </div>
     <script src="dist/main.js"></script>
 </body>
