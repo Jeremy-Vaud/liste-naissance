@@ -2,7 +2,7 @@
     <h2 class="mb-6 text-xl"><?= htmlentities($elt->get("title")) ?></h2>
     <img src="<?= htmlentities($elt->get("img")) ?>" class="w-[200px] h-[200px] object-cover mx-auto mb-3">
     <a href="<?= htmlentities($elt->get("link")) ?>" target="_blank" class="link-primary">Lien vers boutique</a>
-    <p class="text-lg my-3"><?= htmlentities($elt->get("price")) ?> €</p>
+    <p class="text-lg my-3"><?= number_format($elt->get("price"), 2,","," ") ?> €</p>
     <div>
         <?php if ($elt->get("bought")) { ?>
             <p class="text-gray-500 py-1 alreadyBought">déjà réservé</p>
