@@ -27,8 +27,6 @@
     }
 
     .btn-primary {
-        @apply bg-blue-800;
-        @apply hover:bg-blue-600;
         @apply text-white;
         @apply py-1;
         @apply px-6;
@@ -36,10 +34,26 @@
     }
 
     .link-primary {
-        @apply text-blue-800;
-        @apply hover:text-blue-600;
         @apply cursor-pointer;
         @apply transition-colors;
     }
 
+    @layer utilities {
+        .btn-primary {
+            background-color: #1E6E8E;
+        }
+
+        .btn-primary:hover {
+            background-color: #488EA3;
+        }
+
+        .link-primary {
+            color: #1E6E8E;
+        }
+
+        .link-primary:hover {
+            color: #488EA3;
+        }
+          
+    }
 }
