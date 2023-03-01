@@ -19,17 +19,17 @@
         <div id="modal" class="fixed w-[300px] bg-white top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded-lg text-center p-6 hidden">
             <form id="modal-form">
                 <input type="hidden" id="item-id" name="id">
-                <label for="name">Votre nom:</label>
+                <label for="name">Votre nom :</label>
                 <input type="text" id="name" name="name" class="w-full py-1 px-3 mb-6">
-                <button type="submit" class="btn-primary">j'offre ce cadeau</button>
+                <button type="submit" class="btn-primary">J'offre ce cadeau</button>
             </form>
             <div id="modal-success" class="hidden mb-6">
-                <p class="text-2xl">Merci!</p>
+                <p class="text-2xl">Merci !</p>
             </div>
             <div id="modal-error" class="hidden mb-6">
                 <p>Une erreur est survenue!</p>
             </div>
-            <button id="modal-close" class="text-gray-500 cursor-pointer my-2">Fermer</button>
+            <button id="modal-close" class="text-gray-500 cursor-pointer my-3">Fermer</button>
         </div>
     </main>
     <script src="dist/main.js"></script>

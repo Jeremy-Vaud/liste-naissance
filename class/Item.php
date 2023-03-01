@@ -75,7 +75,7 @@ class Item {
      * @return array Tableau d'item
      */
     public function loadAll() {
-        $sql = "SELECT * FROM `item`";
+        $sql = "SELECT * FROM `item` ORDER BY `id`";
         if (!BDD::Execute($sql)) {
             return false;
         }

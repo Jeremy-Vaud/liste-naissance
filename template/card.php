@@ -5,11 +5,11 @@
     <p class="text-lg my-3"><?= number_format($elt->get("price"), 2,","," ") ?> €</p>
     <div>
         <?php if ($elt->get("bought")) { ?>
-            <p class="text-gray-500 py-1 alreadyBought">déjà réservé</p>
-            <button id="<?= $elt->get("id") ?>" class="btn-primary btn hidden">j'offre ce cadeau</button>
+            <p class="text-gray-500 py-1 alreadyBought">Déjà réservé</p>
+            <button id="<?= $elt->get("id") ?>" class="btn-primary btn hidden">J'offre ce cadeau</button>
         <?php } else { ?>
-            <p class="text-gray-500 py-1 hidden alreadyBought">déjà réservé</p>
-            <button id="<?= $elt->get("id") ?>" class="py-1 px-6 btn-primary btn">j'offre ce cadeau</button>
+            <p class="text-gray-500 py-1 hidden alreadyBought">Déjà réservé</p>
+            <button id="<?= $elt->get("id") ?>" class="py-1 px-6 btn-primary btn">J'offre ce cadeau</button>
         <?php } ?>
     </div>
 </div>
